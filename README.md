@@ -104,3 +104,11 @@ test 하위 패키지로 service 생성.
 ## 6. Database 접근
 H2 데이터베이스 사용. \
 순수 Jdbc -> JdbcTemplate -> JPA -> 데이터 JPA 단계로 발전하는 과정을 직접 경험해봄.
+
+### 1. Jdbc
+
+### 2. JdbcTemplate
+
+### 3. JPA
+
+### 4. 데이터 JPA
