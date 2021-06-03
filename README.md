@@ -103,11 +103,22 @@ test 하위 패키지로 service 생성.
 
 ## 6. Database 접근
 H2 데이터베이스 사용. \
-순수 Jdbc -> JdbcTemplate -> JPA -> 데이터 JPA 단계로 발전하는 과정을 직접 경험해봄.
+순수 Jdbc -> JdbcTemplate -> JPA -> 데이터 JPA 단계로 발전하는 과정을 직접 경험해봄. \
 
 ### 1. Jdbc
+스프링의 장점이 바로, 인터페이스를 통한 다형성을 의존성 주입을 통해 스프링 컨테이너가 쉽게 제공해준다는 점이다. \
+개방-폐쇄 원칙(OCP, Open-Closed Principle) 
+ -> memoryRepository 를 jdbcRepository 로 구현체만 변경하고, SpringConfig 에 입력해주면 됨.
+
+테스트 \
+-> 테스트의 경우엔 DI를 필드 주입으로 해줘도 된다. 새로 인자를 추가해줄 경우가 없기 때문. 따라서, @BeforeEach 를 해주지 않아도 됨.
+-> 테스트 케이스의 클래스에 @Transactional 어노테이션을 붙이면, 데이터베이스에 쿼리 날렸던 정보를 롤백해줌. 
+따라서, @AfterEach 를 해줄 필요가 없음. \
+-> @SpringBootTest 는 스프링 컨테이너와 테스트를 동시에 실행해줌. \
+*실제 스프링을 띄워서 하는 통합 테스트 보다 , 각 함수마다 하는 단위 테스트가 더 좋은 경우가 많다.
 
 ### 2. JdbcTemplate
+
 
 ### 3. JPA
 
